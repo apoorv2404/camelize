@@ -55,20 +55,20 @@ test('ignore keys if specified', function(t) {
   t.plan(1);
   var res = camelize({
     'foo-bar': 'baz',
-    '_test': 'stuff',
+    'test': 'stuff',
     'baz-qux': {
-      '_thing': 'some value'
+      'thing': 'some value'
     }
 
   }, {
-    ignore: ['_test', '_thing']
+    ignore: []
   });
 
   t.deepEqual(res, {
     'fooBar': 'baz',
-    '_test': 'stuff',
+    'test': 'stuff',
     'bazQux': {
-      '_thing': 'some value'
+      'thing': 'some value'
     }
   });
 
