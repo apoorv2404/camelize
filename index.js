@@ -22,6 +22,15 @@ function camelCase(str, options) {
   if (options.ignore && options.ignore.indexOf(str) !== -1) {
     return str;
   }
+
+  if (options.ignoreRegex) {
+    for (var i = 0; i < options.ignoreRegex.length; ++i) {
+      if (options.ignoreRegex[i].test(str)) {
+        return str;
+      }
+    }
+  }
+
   return str.replace(/[_.-](\w|$)/g, function(_, x) {
     return x.toUpperCase();
   });
