@@ -9,6 +9,27 @@
 
 }(this, function() {
 
+  var isArray = Array.isArray || function(obj) {
+    return Object.prototype.toString.call(obj) === '[object Array]';
+  };
+
+  var isDate = function(obj) {
+    return Object.prototype.toString.call(obj) === '[object Date]';
+  };
+
+  var isRegex = function(obj) {
+    return Object.prototype.toString.call(obj) === '[object RegExp]';
+  };
+
+  var has = Object.prototype.hasOwnProperty;
+  var objectKeys = Object.keys || function(obj) {
+    var keys = [];
+    for (var key in obj) {
+      if (has.call(obj, key)) keys.push(key);
+    }
+    return keys;
+  };
+
   return function(obj, options) {
     options = options || {};
     if (typeof obj === 'string') return camelCase(obj, options);
@@ -46,27 +67,6 @@
       return x.toUpperCase();
     });
   }
-
-  var isArray = Array.isArray || function(obj) {
-    return Object.prototype.toString.call(obj) === '[object Array]';
-  };
-
-  var isDate = function(obj) {
-    return Object.prototype.toString.call(obj) === '[object Date]';
-  };
-
-  var isRegex = function(obj) {
-    return Object.prototype.toString.call(obj) === '[object RegExp]';
-  };
-
-  var has = Object.prototype.hasOwnProperty;
-  var objectKeys = Object.keys || function(obj) {
-    var keys = [];
-    for (var key in obj) {
-      if (has.call(obj, key)) keys.push(key);
-    }
-    return keys;
-  };
 
   function map(xs, f) {
     if (xs.map) return xs.map(f);
