@@ -1,6 +1,6 @@
 {
   "name": "@storedock/camelize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "recursively transform key strings to camel-case",
   "main": "index.js",
   "devDependencies": {
