@@ -1,6 +1,6 @@
 {
   "name": "@storedock/camelize",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "recursively transform key strings to camel-case",
   "main": "index.js",
   "devDependencies": {
@@ -33,5 +33,6 @@
     "name": "StoreDock Team",
     "email": "team@storedock.in",
     "url": "http://storedock.in"
-  }
+  },
+  "license": "MIT"
 }
